@@ -125,7 +125,7 @@ http {
 
 如果发布者IP固定，建议使用限制发布者访问1935端口方式控制（删除上面nginx.conf中的`on_publish http://localhost:8000/on_publish.php`)
 
-我使用本机8000端口的on_publish.php来检查user和pass，需要修改`/etc/apache2/ports.conf`把端口改为8000以免与nginx使用的80冲突。并增加
+我使用本机8000端口的on_publish.php来检查user和pass，需要修改`/etc/apache2/ports.conf`和`/etc/apache2/sites-enabled/000-default.conf`把端口改为8000以免与nginx使用的80冲突。并增加
 如下的`/var/www/html/on_publish.php`(注意参数是POST过来的，很多的例子GET是错误的)：
 ```
 <?php
